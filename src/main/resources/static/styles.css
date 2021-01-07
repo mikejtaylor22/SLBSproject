@@ -1,0 +1,23 @@
+body {
+    background-color: blanchedalmond;
+    padding: 50px;
+}
+header {
+    padding: 50px;
+}
+h1 {
+    text-align: center;
+}
+.container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+    height: 300px;
+    vertical-align: text-top;
+}
+
+.cake-categories {
+    height: 20px;
+    text-align: center;
+}
