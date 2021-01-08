@@ -4,10 +4,10 @@ import java.util.Collection;
 public class CakeType {
     private long id;
     private String name;
-    private Collection<CakeItem> items;
+    private Collection<ReviewCakeItem> items;
 
 
-    public CakeType(String name, Collection<CakeItem> items, long id) {
+    public CakeType(String name, Collection<ReviewCakeItem> items, long id) {
         this.id = id;
         this.name = name;
         this.items = items;
@@ -21,7 +21,7 @@ public class CakeType {
         return name;
     }
 
-    public Collection<CakeItem> getItems() {
+    public Collection<ReviewCakeItem> getItems() {
         return items;
     }
 }

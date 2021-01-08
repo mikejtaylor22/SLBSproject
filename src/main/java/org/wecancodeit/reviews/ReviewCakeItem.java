@@ -1,20 +1,22 @@
 package org.wecancodeit.reviews;
 
-public class CakeItem {
+public class ReviewCakeItem {
     private CakeType type;
     private String flavor;
     private String icing;
-    private int price;
+    private double price;
     private String shape;
+    private String description;
 
 
 
-    public CakeItem(CakeType type, String flavor, String icing, int price, String shape) {
+    public ReviewCakeItem(CakeType type, String flavor, String icing, double price, String shape, String description) {
         this.type = type;
         this.flavor = flavor;
         this.icing = icing;
         this.price = price;
         this.shape = shape;
+        this.description = description;
     }
 
     public CakeType getType() {
@@ -29,11 +31,13 @@ public class CakeItem {
         return icing;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
     public String getShape() {
         return shape;
     }
+
+    public String getDescription() { return description;}
 }
