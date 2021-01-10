@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <h2 th:text="${ReviewCakeItem.getType()} + '\'s Reviews'">Birthday Cake's Reviews</h2>
+    <p th:text="${ReviewCakeItem.getFlavor()}">Vanilla</p>
+    <p th:text="${ReviewCakeItem.getIcing()}">Butter Cream</p>
+    <p th:text="${ReviewCakeItem.getPrice()}">20.00</p>
+    <p th:text="${ReviewCakeItem.getShape()}">Round</p>
+    <p th:text="${ReviewCakeItem.getDescription()}">Delicious cake!</p>
+    <p th:text="${ReviewCakeItem.getId()}">ID: 1</p>
+</main>
+
+</body>
+</html>

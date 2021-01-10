@@ -20,7 +20,7 @@ public class ReviewCakeItemController {
     }
 
     @RequestMapping("sample-cake-item/{id}")
-    public String getCakeItem(Model model, @PathVariable long id) {-
+    public String getCakeItem(Model model, @PathVariable long id) {
         model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
         return "review-cake-item-template";
 
