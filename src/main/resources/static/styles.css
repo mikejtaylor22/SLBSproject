@@ -24,7 +24,8 @@ h1 {
 }
 #menu{
     height: auto;
-    width: 1200px;
+    width: auto;
+
 }
 
 #menu ul {
@@ -91,5 +92,10 @@ footer{
 
     align-items: center;
 
+
+}
+.top{
+    display: flex;
+    justify-content: center;
 
 }

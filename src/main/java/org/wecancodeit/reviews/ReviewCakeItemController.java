@@ -22,10 +22,15 @@ public class ReviewCakeItemController {
     @RequestMapping("sample-cake-item/{id}")
     public String getCakeItem(Model model, @PathVariable long id) {
         model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
-        return "review-cake-item-template";
+        return "wedding-cake-template";
 
     }
+    @RequestMapping("sample-cake-item2/{id}")
+    public String getBirthdayCake(Model model, @PathVariable long id) {
+        model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
+        return "birthday-cake-template";
 
+    }
 
 
 
