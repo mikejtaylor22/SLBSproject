@@ -1,16 +1,21 @@
 package org.wecancodeit.reviews;
+import javax.persistence.*;
 import java.util.Collection;
 
+@Entity
 public class CakeType {
+    @Id
+    @GeneratedValue
     private long id;
     private String name;
+    @OneToMany(mappedBy = "type")
     private Collection<ReviewCakeItem> items;
 
 
-    public CakeType(String name, Collection<ReviewCakeItem> items, long id) {
-        this.id = id;
-        this.name = name;
-        this.items = items;
+    public CakeType(String name) { this.name = name; }
+
+    public CakeType() {
+
     }
 
     public long getId() {

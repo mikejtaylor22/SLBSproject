@@ -1,6 +1,13 @@
 package org.wecancodeit.reviews;
 
+import javax.persistence.*;
+
+@Entity
 public class ReviewCakeItem {
+   @Id
+   @GeneratedValue
+    private long id;
+   @ManyToOne
     private CakeType type;
     private String flavor;
     private String icing;
@@ -8,16 +15,17 @@ public class ReviewCakeItem {
     private String shape;
     private String description;
 
-    private long id;
+    public ReviewCakeItem() {
 
-    public ReviewCakeItem(CakeType type, String flavor, String icing, double price, String shape, String description, long id) {
+    }
+
+    public ReviewCakeItem(CakeType type, String flavor, String icing, double price, String shape, String description) {
         this.type = type;
         this.flavor = flavor;
         this.icing = icing;
         this.price = price;
         this.shape = shape;
         this.description = description;
-        this.id = id;
     }
 
     public CakeType getType() {
