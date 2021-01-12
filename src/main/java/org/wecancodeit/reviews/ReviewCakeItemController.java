@@ -17,10 +17,19 @@ public class ReviewCakeItemController {
 
     @RequestMapping("sample-cake-item/{id}")
     public String getCakeItem(Model model, @PathVariable long id) {
+
         model.addAttribute("ReviewCakeItem", cakeStorage.getCakeType());
+
+        model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
+
         return "wedding-cake-template";
 
     }
+    @RequestMapping("sample-cake-item2/{id}")
+    public String getBirthdayCake(Model model, @PathVariable long id) {
+        model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
+        return "birthday-cake-template";
+
 
     @RequestMapping("sample-cake-item2/{id}")
     public String getBirthdayCake(Model model, @PathVariable long id) {
@@ -30,6 +39,9 @@ public class ReviewCakeItemController {
     }
 }
 
+
+
+    }
 
 
 
