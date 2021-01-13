@@ -16,7 +16,7 @@ public class ReviewCakeItem {
     private String shape;
     private String description;
 
-    public ReviewCakeItem() {
+    protected ReviewCakeItem() {
 
     }
 

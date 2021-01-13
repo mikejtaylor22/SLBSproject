@@ -10,26 +10,22 @@ import java.util.Map;
 
 @Controller
 public class ReviewCakeItemController {
-    CakeStorage cakeStorage;
+    CakeItemStorage cakeItemStorage;
 
-    public ReviewCakeItemController(CakeStorage inCakeStorage) {
-        cakeStorage = inCakeStorage;
+    public ReviewCakeItemController(CakeItemStorage inCakeItemStorage) {
+        cakeItemStorage = inCakeItemStorage;
     }
 
     @RequestMapping("sample-cake-item/{id}")
     public String getCakeItem(Model model, @PathVariable long id) {
 
-        model.addAttribute("ReviewCakeItem", cakeStorage.getCakeType());
+        model.addAttribute("ReviewCakeItem", cakeItemStorage.getReviewCakeItemByID(id));
         //ask for
-        model.addAttribute("ReviewCakeItem", cakeStorage.reviewCakeItemMap);
+
 
         return "wedding-cake-template";
 
     }
-    @RequestMapping("sample-cake-item2/{id}")
-    public String getBirthdayCake(Model model, @PathVariable long id) {
-        model.addAttribute("ReviewCakeItem", cakeStorage.getCakeTypeByID(id));
-        return "birthday-cake-template";
 
 
 
@@ -37,7 +33,7 @@ public class ReviewCakeItemController {
 
 
 
-}
+
 
 
 

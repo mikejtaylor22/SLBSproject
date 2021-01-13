@@ -16,7 +16,7 @@ public class CakeStorage {
         this.cakeTypeRepository = cakeTypeRepository;
     }
 
-    public void addReviewCakeItem(CakeType inCakeType) {
+    public void addCakeType(CakeType inCakeType) {
         cakeTypeRepository.save(inCakeType);
     }
 
