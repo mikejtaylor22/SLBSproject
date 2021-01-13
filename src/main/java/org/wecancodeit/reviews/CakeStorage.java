@@ -5,22 +5,33 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class CakeStorage {
-    Map<Long, ReviewCakeItem> reviewCakeItemMap = new HashMap<>();
+    // Map<Long, ReviewCakeItem> reviewCakeItemMap = new HashMap<>();
+    private CakeTypeRepository cakeTypeRepository;
 
-    public CakeStorage() {
-        CakeType sampleCakeType = new CakeType("wedding cake");
-        ReviewCakeItem sampleCakeItem = new ReviewCakeItem(sampleCakeType, "chocolate", "cream cheese", 20.00, "round", "good");
-        reviewCakeItemMap.put(1L, sampleCakeItem);
+    public CakeStorage(CakeTypeRepository cakeTypeRepository) {
+        this.cakeTypeRepository = cakeTypeRepository;
     }
 
-    public void addReviewCakeItem(ReviewCakeItem inReviewCakeItem) { reviewCakeItemMap.put(inReviewCakeItem.getId(), inReviewCakeItem);}
+    public void addReviewCakeItem(CakeType inCakeType) {
+        cakeTypeRepository.save(inCakeType);
+    }
 
-    public Collection<ReviewCakeItem> getCakeType() { return reviewCakeItemMap.values();}
+    public Iterable<CakeType> getCakeType() {
+        return cakeTypeRepository.findAll();
+    }
 
-    public ReviewCakeItem getCakeTypeByID(Long id) { return reviewCakeItemMap.get(id);}
+    public CakeType getCakeTypeByID(Long id) {
+        Optional<CakeType> retrievedTodoOwnerOptional = cakeTypeRepository.findById(id);
+        if (retrievedTodoOwnerOptional.isPresent()) {
+            CakeType foundCakeType = retrievedTodoOwnerOptional.get();
+            return foundCakeType;
+        }
+        return null;
 
 
+    }
 }

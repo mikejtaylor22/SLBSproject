@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,7 +10,18 @@
     <ul>
         <li><a href="./good-reviews.html">Good Reviews</a></li>
         <li><a href="./poor-reviews.html">Poor Reviews</a></li>
+
     </ul>
+        <main>
+        <h2 th:text="${ReviewCakeItem.getType()} + '\'s Reviews'">Birthday Cake's Reviews</h2>
+        <p th:text="${ReviewCakeItem.getFlavor()}">chocolate</p>
+        <p th:text="${ReviewCakeItem.getIcing()}">Butter Cream</p>
+        <p th:text="${ReviewCakeItem.getPrice()}">20.00</p>
+        <p th:text="${ReviewCakeItem.getShape()}">Round</p>
+        <p th:text="${ReviewCakeItem.getDescription()}">Delicious cake!</p>
+        <p th:text="${ReviewCakeItem.getId()}">ID: 1</p>
+        </main>
+
 </section>
 
 </body>

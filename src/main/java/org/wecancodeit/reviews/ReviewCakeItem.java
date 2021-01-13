@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class ReviewCakeItem {
@@ -52,5 +53,31 @@ public class ReviewCakeItem {
 
     public long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "ReviewCakeItem{" +
+                "id=" + id +
+                ", type=" + type +
+                ", flavor='" + flavor + '\'' +
+                ", icing='" + icing + '\'' +
+                ", price=" + price +
+                ", shape='" + shape + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReviewCakeItem that = (ReviewCakeItem) o;
+        return id == that.id && Double.compare(that.price, price) == 0 && Objects.equals(type, that.type) && Objects.equals(flavor, that.flavor) && Objects.equals(icing, that.icing) && Objects.equals(shape, that.shape) && Objects.equals(description, that.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type, flavor, icing, price, shape, description);
     }
 }

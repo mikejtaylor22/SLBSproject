@@ -1,4 +1,5 @@
 package org.wecancodeit.reviews;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,43 +20,24 @@ public class ReviewCakeItemController {
     public String getCakeItem(Model model, @PathVariable long id) {
 
         model.addAttribute("ReviewCakeItem", cakeStorage.getCakeType());
-
-        model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
+        //ask for
+        model.addAttribute("ReviewCakeItem", cakeStorage.reviewCakeItemMap);
 
         return "wedding-cake-template";
 
     }
     @RequestMapping("sample-cake-item2/{id}")
     public String getBirthdayCake(Model model, @PathVariable long id) {
-        model.addAttribute("ReviewCakeItem", reviewCakeItemMap.get(id));
-        return "birthday-cake-template";
-
-
-    @RequestMapping("sample-cake-item2/{id}")
-    public String getBirthdayCake(Model model, @PathVariable long id) {
         model.addAttribute("ReviewCakeItem", cakeStorage.getCakeTypeByID(id));
         return "birthday-cake-template";
 
+
+
     }
+
+
+
 }
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
