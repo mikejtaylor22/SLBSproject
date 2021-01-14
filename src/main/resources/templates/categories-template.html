@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -11,6 +12,17 @@
         <li><a href="./birthday-cakes.html">Birthday Cake</a></li>
     </ul>
 </section>
+<main>
+    <h2 th:text="${CakeType.name} + '\'s Reviews'">Birthday Cake's Reviews</h2>
+    <ul>
+       <li th:each="Review: ${CakeType.items}"><a th:href="'/sample-cake-item/' + ${Review.id}" th:text="${CakeType.name}"></a></li>
+
+
+    </ul>
+
+
+
+</main>
 
 
 </body>

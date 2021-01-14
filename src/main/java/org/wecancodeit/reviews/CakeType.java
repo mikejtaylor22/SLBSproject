@@ -36,20 +36,25 @@ public class CakeType {
         return "CakeType{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", items=" + items +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         CakeType cakeType = (CakeType) o;
-        return id == cakeType.id && Objects.equals(name, cakeType.name) && Objects.equals(items, cakeType.items);
+
+        if (id != cakeType.id) return false;
+        return name != null ? name.equals(cakeType.name) : cakeType.name == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, items);
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
 }

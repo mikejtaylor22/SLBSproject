@@ -25,9 +25,9 @@ public class CakeStorage {
     }
 
     public CakeType getCakeTypeByID(Long id) {
-        Optional<CakeType> retrievedTodoOwnerOptional = cakeTypeRepository.findById(id);
-        if (retrievedTodoOwnerOptional.isPresent()) {
-            CakeType foundCakeType = retrievedTodoOwnerOptional.get();
+        Optional<CakeType> retrievedCakeTypeOptional = cakeTypeRepository.findById(id);
+        if (retrievedCakeTypeOptional.isPresent()) {
+            CakeType foundCakeType = retrievedCakeTypeOptional.get();
             return foundCakeType;
         }
         return null;

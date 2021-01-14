@@ -23,7 +23,7 @@ public class ReviewCakeItemController {
         //ask for
 
 
-        return "wedding-cake-template";
+        return "reviews-template";
 
     }
 
