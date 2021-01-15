@@ -4,25 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<section class = "Good and Poor reviews">
-    <ul>
-        <li><a href="./good-reviews.html">Good Reviews</a></li>
-        <li><a href="./poor-reviews.html">Poor Reviews</a></li>
+    <header>
+    <div class="header">
 
-    </ul>
+        <div class="top">
+            <img src="images/header2.PNG"
+                 height="300"
+                 width="1000"
+            />
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="categories-template">Categories</a>
+                    <ul>
+                        <li><a href="sample-cake-type/1">Wedding Cakes</a></li>
+                        <li><a href="sample-cake-type/2">Birthday Cakes</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a>
+                    <ul>
+                        <li><a href="poor-reviews.html">Poor Reviews</a></li>
+                        <li><a href="good-reviews.html">Good Reviews</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="hashtags-template">#</a>
+                    <ul>
+                        <li><a href="./sample-cake-type/1">Chocolate Cake</a></li>
+                        <li><a href="./sample-cake-type/2">Vanilla Cake</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<div class="container">
+    <div>
+        <p class="intro">
+            Welcome to SLBS Review Cake Company. We are happy to help you find the best cake for your special occasion
+            by listing cakes reviews for a wedding or birthday.
+        </p>
+    </div>
+    <div class="img">
+        <div>
+            <h2 class="cake-categories"><a href="wedding-cakes.html">Wedding Cakes</a></h2>
+
+            <section>
+
+                <img  src="images/Picture1.png" width="200 auto" alt="Wedding Cake" />
+            </section>
+        </div>
+        <div>
+
+            <h2 class="cake-categories"><a href="birthday-cakes.html">Birthday Cakes</a></h2>
+            <section>
+                <img class="img" src="images/Picture2.png" width="200 auto" alt="Birthday Cake"/>
+            </section>
+        </div>
+    </div>
+</div>
+
+<section class = "Good and Poor reviews">
+
         <main>
-        <h2 th:text="${ReviewCakeItem.getType()} + '\'s Reviews'">Birthday Cake's Reviews</h2>
-        <p th:text="${ReviewCakeItem.getFlavor()}">chocolate</p>
-        <p th:text="${ReviewCakeItem.getIcing()}">Butter Cream</p>
-        <p th:text="${ReviewCakeItem.getPrice()}">20.00</p>
-        <p th:text="${ReviewCakeItem.getShape()}">Round</p>
-        <p th:text="${ReviewCakeItem.getDescription()}">Delicious cake!</p>
-        <p th:text="${ReviewCakeItem.getId()}">ID: 1</p>
+        <h2 th:text="${ReviewCakeItem.type.name} + '\'s Reviews'">Birthday Cake's Reviews</h2>
+        <p th:text="${ReviewCakeItem.flavor}">chocolate</p>
+        <p th:text="${ReviewCakeItem.icing}">Butter Cream</p>
+        <p th:text="${ReviewCakeItem.price}">20.00</p>
+        <p th:text="${ReviewCakeItem.shape}">Round</p>
+        <p th:text="${ReviewCakeItem.description}">Delicious cake!</p>
         </main>
 
 </section>
+    <footer>
+        <h3>Copyright 2021 SLBS</h3>
+    </footer>
 
 </body>
 </html>
