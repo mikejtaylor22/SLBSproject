@@ -17,8 +17,10 @@ public class ReviewCakeItem {
     private double price;
     private String shape;
     private String description;
-    @ManyToMany
+    @ManyToMany(mappedBy = "items")
     private Collection<Hashtag> hashtags;
+    @ManyToMany(mappedBy = "reviewComments")
+    private Collection<Comment> comments;
 
     protected ReviewCakeItem() {
 
@@ -58,6 +60,14 @@ public class ReviewCakeItem {
 
     public long getId() {
         return id;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public Collection<Hashtag> getHashtags() {
+        return hashtags;
     }
 
     @Override

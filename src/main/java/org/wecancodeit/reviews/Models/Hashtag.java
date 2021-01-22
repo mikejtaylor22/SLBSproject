@@ -2,6 +2,8 @@ package org.wecancodeit.reviews.Models;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
+
 @Entity
 public class Hashtag {
 
@@ -9,11 +11,14 @@ public class Hashtag {
         @GeneratedValue
         private long id;
         private String name;
-        @ManyToMany(mappedBy = "hashtags")
+        @ManyToMany
         private Collection<ReviewCakeItem> items;
 
 
-        public Hashtag(String name) { this.name = name; }
+        public Hashtag(String name,ReviewCakeItem...items) {
+            this.name = name;
+            this.items = List.of(items);
+        }
 
         public Hashtag() {
 
@@ -30,6 +35,8 @@ public class Hashtag {
         public Collection<ReviewCakeItem> getItems() {
             return items;
         }
+
+
 
     @Override
     public String toString() {

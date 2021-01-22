@@ -34,4 +34,8 @@ public class CakeStorage {
 
 
     }
+
+    public CakeType getCake(Long id){
+        return cakeTypeRepository.findById(id).get();
+    }
 }

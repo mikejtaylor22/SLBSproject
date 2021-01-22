@@ -35,6 +35,12 @@ public class CakeItemStorage {
 
         }
 
+        public ReviewCakeItem getReviewCakeItem(Long id){
+            return cakeItemRepository.findById(id).get();
+        }
+
+
+
     public void addComment(CakeType addedComment) {
     }
 }

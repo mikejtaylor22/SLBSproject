@@ -28,16 +28,18 @@ public class Populator implements CommandLineRunner {
         cakeStorage.addCakeType(sampleCakeType1);
         cakeStorage.addCakeType(sampleCakeType2);
 
-        Hashtag sampleHashtag1 = new Hashtag("tasty");
-        Hashtag sampleHashtag2 = new Hashtag("delicious");
-        hashtagStorage.addHashtag(sampleHashtag1);
-        hashtagStorage.addHashtag(sampleHashtag2);
 
-        ReviewCakeItem sampleCakeItem1 = new ReviewCakeItem(sampleCakeType1, "chocolate", "cream cheese", 20.00, "round", "good", sampleHashtag1, sampleHashtag2);
-        ReviewCakeItem sampleCakeItem2 = new ReviewCakeItem(sampleCakeType2, "vanilla", "butter cream", 40.00, "square", "moist", sampleHashtag1, sampleHashtag2);
+        ReviewCakeItem sampleCakeItem1 = new ReviewCakeItem(sampleCakeType1, "chocolate", "cream cheese", 20.00, "round", "good");
+        ReviewCakeItem sampleCakeItem2 = new ReviewCakeItem(sampleCakeType2, "vanilla", "butter cream", 40.00, "square", "moist");
 
         cakeItemStorage.addReviewCakeItem(sampleCakeItem1);
         cakeItemStorage.addReviewCakeItem(sampleCakeItem2);
+
+
+        Hashtag sampleHashtag1 = new Hashtag("#tasty",sampleCakeItem1);
+        Hashtag sampleHashtag2 = new Hashtag("#delicious",sampleCakeItem2);
+        hashtagStorage.addHashtag(sampleHashtag1);
+        hashtagStorage.addHashtag(sampleHashtag2);
 
     }
 
