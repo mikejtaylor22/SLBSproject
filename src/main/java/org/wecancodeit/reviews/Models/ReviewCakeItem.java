@@ -1,6 +1,8 @@
 package org.wecancodeit.reviews;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,18 +17,21 @@ public class ReviewCakeItem {
     private double price;
     private String shape;
     private String description;
+    @ManyToMany
+    private Collection<Hashtag> hashtags;
 
     protected ReviewCakeItem() {
 
     }
 
-    public ReviewCakeItem(CakeType type, String flavor, String icing, double price, String shape, String description) {
+    public ReviewCakeItem(CakeType type, String flavor, String icing, double price, String shape, String description, Hashtag ... inHashtag) {
         this.type = type;
         this.flavor = flavor;
         this.icing = icing;
         this.price = price;
         this.shape = shape;
         this.description = description;
+        this.hashtags = List.of(inHashtag);
     }
 
     public CakeType getType() {

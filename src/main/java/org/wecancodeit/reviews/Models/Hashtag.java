@@ -1,9 +1,6 @@
 package org.wecancodeit.reviews;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 @Entity
 public class Hashtag {
@@ -12,7 +9,7 @@ public class Hashtag {
         @GeneratedValue
         private long id;
         private String name;
-        @OneToMany(mappedBy = "type")
+        @ManyToMany(mappedBy = "hashtags")
         private Collection<ReviewCakeItem> items;
 
 
