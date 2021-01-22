@@ -1,4 +1,4 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.Models;
 
 import javax.persistence.*;
 import java.util.Collection;

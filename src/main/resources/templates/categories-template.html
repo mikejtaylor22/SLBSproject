@@ -4,21 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <section class = "Giant Eagle cakes">
     <ul>
-        <li><a href="./wedding-cakes.html">Wedding Cake</a></li>
-        <li><a href="./birthday-cakes.html">Birthday Cake</a></li>
+        <li><a href="/sample-cake-type/1">Wedding Cake</a></li>
+        <li><a href="/sample-cake-type/2">Birthday Cake</a></li>
     </ul>
 </section>
 <main>
     <h2 th:text="${CakeType.name} + '\'s Reviews'">Birthday Cake's Reviews</h2>
     <ul>
-       <li th:each="Review: ${CakeType.items}"><a th:href="'/sample-cake-item/' + ${Review.id}" th:text="${CakeType.name}"></a></li>
+       <li th:each="Review: ${CakeType.items}"><a th:href="'/single-cake-review/' + ${Review.id}" th:text="${CakeType.name}"></a></li>
 
 
     </ul>
+<!--    <form action="reviews" method=post>-->
+<!--        <p>Reviews</p>-->
+<!--        <input type="text" name="reviewCake">-->
+<!--        -->
+<!--        -->
+<!--    </form>-->
 
 
 

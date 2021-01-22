@@ -1,7 +1,7 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.Models;
+
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 public class CakeType {

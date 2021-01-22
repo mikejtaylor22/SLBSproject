@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<section class = "Cake Flavors">
+<!--<section class = "Cake Flavors">-->
+<!--    <ul>-->
+<!--        <li><a href="./chocolate-cake.html">Chocolate Cake</a></li>-->
+<!--        <li><a href="./vanilla-cake.html">Vanilla Cake</a></li>-->
+<!--    </ul>-->
+<!--</section>-->
+<div class="hashtags">
+    <h2 th:text="${Hashtag.name} + '\'s Reviews'">Birthday Cake's Reviews</h2>
     <ul>
-        <li><a href="./chocolate-cake.html">Chocolate Cake</a></li>
-        <li><a href="./vanilla-cake.html">Vanilla Cake</a></li>
+        <li th:each="Review: ${Hashtag.getItems()}"><a th:href="'/sample-cake-item/' + ${Review.id}" th:text="'cakeNumber'+ ${Review.id}"></a></li>
     </ul>
-</section>
+</div>
 
 </body>
 </html>

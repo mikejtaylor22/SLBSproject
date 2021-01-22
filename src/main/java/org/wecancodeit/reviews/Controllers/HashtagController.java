@@ -1,9 +1,11 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.wecancodeit.reviews.Storage.HashtagStorage;
+
 @Controller
 public class HashtagController {
 
@@ -18,8 +20,6 @@ public class HashtagController {
 
         model.addAttribute("Hashtag", hashtagStorage.getHashtagByID(id));
         //ask for
-
-
         return "hashtags-template";
 
     }

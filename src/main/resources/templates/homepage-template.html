@@ -25,7 +25,7 @@
                         <li><a href="/sample-cake-type/2">Birthday Cakes</a></li>
                     </ul>
                 </li>
-                <li><a href="/">Reviews</a>
+                <li><a href="/all-reviews">Reviews</a>
 
 
                 </li>
@@ -54,15 +54,7 @@
 
 <section class = "Good and Poor reviews">
 
-        <main>
-        <h2 th:text="${ReviewCakeItem.type.name} + '\'s Reviews'">Birthday Cake's Reviews</h2>
-        <p th:text="${ReviewCakeItem.flavor}">chocolate</p>
-        <p th:text="${ReviewCakeItem.icing}">Butter Cream</p>
-        <p th:text="${ReviewCakeItem.price}">20.00</p>
-        <p th:text="${ReviewCakeItem.shape}">Round</p>
-        <p th:text="${ReviewCakeItem.description}">Delicious cake!</p>
 
-        </main>
 
 </section>
     <form action="Comment" method="post">

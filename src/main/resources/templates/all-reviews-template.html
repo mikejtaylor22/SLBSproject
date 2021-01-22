@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<!--<section class = "Giant Eagle cakes">-->
+<!--    <ul>-->
+<!--        <li><a href="/sample-cake-type/1">Wedding Cake</a></li>-->
+<!--        <li><a href="/sample-cake-type/2">Birthday Cake</a></li>-->
+<!--    </ul>-->
+<!--</section>-->
+<header>
+    <h1>SLBS' Reviews</h1>
+    <nav id="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/categories-template">Categories</a>
+                <ul>
+                    <li><a href="/sample-cake-item/1">Wedding Cakes</a></li>
+                    <li><a href="/sample-cake-item/2">Birthday Cakes</a></li>
+                </ul>
+            </li>
+            <li><a href="/">Reviews</a>
+                <!--                            <ul>-->
+                <!--                                <li><a href="poor-reviews.html">Poor Reviews</a></li>-->
+                <!--                                <li><a href="good-reviews.html">Good Reviews</a></li>-->
+                <!--                            </ul>-->
+            </li>
+            <li><a href="/hashtags-template">#</a>
+                <ul>
+                    <li><a href="sample-cake-hashtag/1">Chocolate Cake</a></li>
+                    <li><a href="sample-cake-hashtag/2">Vanilla Cake</a></li>
+                </ul>
+
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+<!--    <h2>Reviews</h2>-->
+    <ul>
+        <main>
+            <div th:each="review:${reviews}">
+                <h2 th:text="${review.type.name} + '\'s Reviews'">Birthday Cake's Reviews</h2>
+                <p th:text="${review.flavor}">chocolate</p>
+                <p th:text="${review.icing}">Butter Cream</p>
+                <p th:text="${review.price}">20.00</p>
+                <p th:text="${review.shape}">Round</p>
+                <p th:text="${review.description}">Delicious cake!</p>
+            </div>
+        </main>
+    </ul>
+    <form action="Comment" method="post">
+        <p>Leave a comment</p>
+        <input type="text" name="newComment"/>
+        <button type="submit">Add Comment</button>
+    </form>
+
+</main>
+<footer>
+    <h3>Copyright 2021 SLBS</h3>
+</footer>
+</body>
+</html>
+
+
+
+
+

@@ -1,10 +1,9 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.Storage;
 
 import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.Models.CakeType;
+import org.wecancodeit.reviews.CakeTypeRepository;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -25,6 +24,7 @@ public class CakeStorage {
     }
 
     public CakeType getCakeTypeByID(Long id) {
+//        return cakeTypeRepository.findById(id).get();
         Optional<CakeType> retrievedCakeTypeOptional = cakeTypeRepository.findById(id);
         if (retrievedCakeTypeOptional.isPresent()) {
             CakeType foundCakeType = retrievedCakeTypeOptional.get();

@@ -1,6 +1,9 @@
-package org.wecancodeit.reviews;
+package org.wecancodeit.reviews.Storage;
 
 import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.CakeItemRepository;
+import org.wecancodeit.reviews.Models.CakeType;
+import org.wecancodeit.reviews.Models.ReviewCakeItem;
 
 import java.util.Optional;
 
@@ -31,4 +34,7 @@ public class CakeItemStorage {
             return null;
 
         }
+
+    public void addComment(CakeType addedComment) {
     }
+}
